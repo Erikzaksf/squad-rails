@@ -2,8 +2,10 @@
 
 <ul>
   <% @posts.each do |post| %>
-  <li><%= post.title %></li>
-  <li><%= post.category %></li>
-  <li><%= post.created_at %></li>
+  <li><%= link_to post.title, post_path(post)%></li>
+  <ul>
+    <li><%= post.category %></li>
+    <li><%= post.created_at %></li>
+  </ul>
   <% end %>
 </ul>
