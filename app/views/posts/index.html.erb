@@ -4,10 +4,14 @@
 <hr>
 <ul>
   <% @posts.each do |post| %>
-  <li><%= link_to post.title, post_path(post)%></li>
+
+  <h1><%= link_to post.title, post_path(post)%></h1>
   <ul>
-    <li><%= post.category %></li>
-    <li><%= post.created_at %></li>
+    <li>Category: <br> <%= post.category %></li>
+
+    <li>Time created: <br> <%= post.created_at %></li>
   </ul>
+  <hr>
   <% end %>
+
 </ul>

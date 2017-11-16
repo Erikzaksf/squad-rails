@@ -2,5 +2,11 @@
 <h2><%= @post.category %></h2>
 <h3><%= @post.body %></h3>
 <h4><%= @post.created_at %></h4>
-
+<br>
+<p><%= link_to "Edit", edit_post_path(@post) %></p>
+<p><%= link_to "Delete", post_path(@post),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+<hr>
+<br>
 <h3><%= link_to "Back to HQ", posts_path %></h3>
