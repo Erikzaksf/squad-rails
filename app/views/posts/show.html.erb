@@ -28,9 +28,7 @@
   <p>There are no comments yet!</p>
 <% end %>
 <p><%= link_to "Add a comment", new_post_comment_path(@post) %></p>
-<p><%= link_to "Delete Post", post_path(@post),
-                        :data => {:confirm => "Are you sure?",
-                                       :method => "delete"} %></p>
+
 
 <hr>
 <br>
