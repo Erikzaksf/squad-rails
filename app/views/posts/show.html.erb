@@ -8,5 +8,28 @@
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>
 <hr>
+<% if @post.comments.any? %>
+  <h4>Here are the comments for this post:</h4>
+
+  <ul>
+    <% @post.comments.each do |comment| %>
+      <li>
+        <%= comment.reply %> |
+        <%= link_to "Edit", edit_post_comment_path(@post, comment) %> |
+        <%= link_to "Delete", post_comment_path(@post, comment),
+                                 :data => {:confirm => "Are you sure?",
+                                                :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no comments yet!</p>
+<% end %>
+<p><%= link_to "Add a comment", new_post_comment_path(@post) %></p>
+<p><%= link_to "Delete Post", post_path(@post),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<hr>
 <br>
 <h3><%= link_to "Back to HQ", posts_path %></h3>

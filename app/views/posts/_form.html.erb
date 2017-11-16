@@ -1,7 +1,7 @@
 <%= render "layouts/errors", :object => @post %>
 
 
-<%= form_for @post do |f| %>
+<%= form_for [@post] do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, size: "50x50" %>
   <br>
