@@ -1,0 +1,23 @@
+<h1>New Post</h1>
+
+<% if @post.errors.any? %>
+  <h3>Oops there were some errors. Please try again:</h3>
+  <ul>
+    <% @post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, size: "50x50" %>
+  <br>
+  <%= f.label :category %>
+  <%= f.text_field :category, size: "50x50" %>
+  <br>
+  <%= f.label :body %>
+  <%= f.text_field :body, size: "100x100" %>
+  <br>
+  <%= f.submit %>
+<% end %>
